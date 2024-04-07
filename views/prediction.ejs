@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lithium-ion Battery Remaining Life</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .speedometer {
+      width: 250px;
+      height: 150px;
+      position: relative;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .speedometer svg {
+      transform: rotateY(180deg);
+    }
+    .path {
+      fill: none;
+      stroke: #ddd;
+      stroke-width: 3;
+    }
+    .gradient-path {
+      fill: url(#gradient);
+      stroke: #ddd;
+      stroke-width: 3;
+    }
+    .needle {
+      width: 6px;
+      height: 30px;
+      margin-top: 2.5cm;
+      background-color: #222;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 3px); /* half the width */
+      transform: translate(-50%, 100%) rotate(-90deg);
+      transform-origin: bottom center;
+      transition: transform 0.5s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .needle::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 15px solid #222;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .description {
+      text-align: center;
+      color: #666;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #333;
+        border-bottom: 2px solid #ccc;
+        /* Add this line to create a gray border */
+    }
+
+    .header img {
+        height: 40px;
+    }
+
+    .header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .header ul li {
+        margin-left: 20px;
+    }
+
+    .header ul li a {
+        text-decoration: none;
+        color: #333;
+    }
+    .battery {
+      width: 200px;
+      height: 50px;
+      background-color: #ddd;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+    .level {
+      height: 100%;
+      background-color: #4caf50;
+      position: absolute;
+      bottom: 0;
+      transition: width 0.5s ease; /* Adding smooth transition */
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/Footer-Logo-1.png" alt="Varroc Logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Lithium-ion Battery Remaining Life</h1>
+        <div class="speedometer">
+          <svg width="250" height="150" viewBox="0 0 250 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ef9a9a"/>
+                <stop offset="100%" stop-color="#4caf50"/>
+              </linearGradient>
+            </defs>
+            <path class="gradient-path" d="M0,150 Q125,0 250,150"/>
+            <path class="path" d="M0,150 Q125,0 250,150"/>
+          </svg>
+          <div class="needle"></div>
+          
+        </div>
+        <div class="battery">
+            <div class="level" style="width: 70%;"></div>
+          </div>
+          <p class="description">Remaining Useful Life(RUL): <span id="batteryCycles" style="font-size: 20px;"><%= RUL %></span></p>
+          <p class="description">Remaining battery life percentage: <span id="batteryCycles" style="font-size: 20px;"><%= life_remaining_perc %></span></p>
+        <p class="description">Total no of cycles: 3000</p>
+
+
+        
+        <p class="description">The number of cycles represents the total charge and discharge cycles a lithium-ion battery can undergo before its capacity significantly decreases and is considered dead. We have taken 0.99 capacity as the threshold after which we consider the battery as dead.</p>
+      </div>
+    
+      <script>
+        // JavaScript to update the battery life cycles
+        // You can replace this with your actual data fetching mechanism
+        document.addEventListener("DOMContentLoaded", function() {
+          // Sample battery life cycles
+          var batteryCycles = document.getElementById("batteryCycles").innerHTML;
+          document.querySelector("#batteryCycles").textContent = batteryCycles;
+          // Calculate the rotation angle for the needle
+          var rotationAngle = (batteryCycles / 3000) * 180;
+          document.querySelector(".needle").style.transform = "translate(-50%, 100%) rotate(" + (rotationAngle - 90) + "deg)";
+        });
+
+    // Example: Fetching battery percentage dynamically (you need to replace this with actual data fetching logic)
+    var Remaining_percentage = 70; // Example value, you need to replace this with your actual data
+
+    // Update battery level dynamically
+    const batteryLevel = document.getElementById('batteryLevel');
+    batteryLevel.style.width = batteryPercentage + '%';
+
+    // Update battery description dynamically
+    const batteryDescription = document.getElementById('batteryDescription');
+    batteryDescription.textContent = `Remaining useful life: ${batteryPercentage}%`;
+
+    // Optionally, you can fetch this data from an API or database asynchronously using JavaScript fetch or other methods.
+
+      </script>
+</body>
+</html>

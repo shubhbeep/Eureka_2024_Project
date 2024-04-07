@@ -1,0 +1,204 @@
+div#n2-ss-3 {
+    width: 1000px;
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+html[dir="rtl"] div#n2-ss-3 {
+    float: right;
+}
+
+div#n2-ss-3 .n2-ss-slider-1 {
+    position: relative;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    height: 400px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #3e3e3e;
+    border-color: RGBA(62, 62, 62, 1);
+    border-radius: 0px;
+    background-clip: padding-box;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+div#n2-ss-3 .n2-ss-slider-background-video-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div#n2-ss-3 .n2-ss-slider-2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.x-firefox div#n2-ss-3 .n2-ss-slider-2 {
+    opacity: 0.99999;
+}
+
+div#n2-ss-3 .n2-ss-slider-3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 1px solid rgba(0, 0, 0, 0);
+    z-index: 10;
+}
+
+div#n2-ss-3 .n2-ss-slide-backgrounds,
+div#n2-ss-3 .n2-ss-slider-3>.n-particles-js-canvas-el,
+div#n2-ss-3 .n2-ss-slider-3>.n2-ss-divider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div#n2-ss-3 .n2-ss-slide-backgrounds {
+    z-index: 10;
+}
+
+div#n2-ss-3 .n2-ss-slider-3>.n-particles-js-canvas-el {
+    z-index: 12;
+}
+
+div#n2-ss-3 .n2-ss-slide-backgrounds>* {
+    overflow: hidden;
+}
+
+div#n2-ss-3 .n2-ss-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: block;
+    -webkit-backface-visibility: hidden;
+}
+
+div#n2-ss-3 .n2-ss-layers-container {
+    position: relative;
+    width: 1000px;
+    height: 400px;
+}
+
+div#n2-ss-3 .n2-ss-parallax-clip>.n2-ss-layers-container {
+    position: absolute;
+    right: 0;
+}
+
+div#n2-ss-3 .n2-ss-slide {
+    perspective: 1500px;
+}
+
+div#n2-ss-3[data-ie] .n2-ss-slide {
+    perspective: none;
+    transform: perspective(1500px);
+}
+
+div#n2-ss-3 .n2-ss-slide-active {
+    z-index: 21;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet {
+    visibility: hidden;
+    text-align: center;
+    justify-content: center;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize {
+    width: 100%;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize {
+    height: 100%;
+    flex-flow: column;
+}
+
+div#n2-ss-3 .nextend-bullet-bar {
+    display: inline-flex;
+    visibility: visible;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+div#n2-ss-3 .n2-bar-justify-content-left {
+    justify-content: flex-start;
+}
+
+div#n2-ss-3 .n2-bar-justify-content-center {
+    justify-content: center;
+}
+
+div#n2-ss-3 .n2-bar-justify-content-right {
+    justify-content: flex-end;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-vertical>.nextend-bullet-bar {
+    flex-flow: column;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+    display: flex;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+    flex: 1 1 auto;
+}
+
+div#n2-ss-3 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+    height: 100%;
+}
+
+div#n2-ss-3 .nextend-bullet-bar .n2-bullet {
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    vertical-align: top;
+}
+
+div#n2-ss-3 .nextend-bullet-bar .n2-bullet.n2-active {
+    cursor: default;
+}
+
+div#n2-ss-3 div.n2-ss-bullet-thumbnail-container {
+    position: absolute;
+    opacity: 0;
+    z-index: 10000000;
+}
+
+div#n2-ss-3 .n2-ss-bullet-thumbnail-container .n2-ss-bullet-thumbnail {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div#n2-ss-3 .n2-style-af010ac55a71f04f684b648dc04490dd-dot {
+    background: #ffffff;
+    opacity: 1;
+    padding: 5px 5px 5px 5px;
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ced3d5;
+    border-color: RGBA(206, 211, 213, 1);
+    border-radius: 50px;
+    margin: 4px;
+}
+
+div#n2-ss-3 .n2-style-af010ac55a71f04f684b648dc04490dd-dot.n2-active,
+div#n2-ss-3 .n2-style-af010ac55a71f04f684b648dc04490dd-dot:HOVER {
+    background: #ced3d5;
+}
